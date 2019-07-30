@@ -1,0 +1,28 @@
+{% extends 'commathweb/base.html' %}
+{% block content %}
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <h2> แก้ระบบสมการเชิงเส้น $Ax = b$ </h2>
+    <br><br>
+    <form action='' method="POST">
+        {% csrf_token %}
+        <textarea name = "number" rows="10" cols="30"> </textarea>
+        <br><br><br>
+        <input type="submit" class="btn btn-primary btn-lg" value="Submit">
+    </form><br>
+    <form action="/">
+        <input type="submit" value="HOME" class="btn btn-success btn-lg" />
+    </form>
+    <h1>{{ text }}</h1>
+    <br>
+    <br>
+    <h1>Result</h1><br>
+    <h1>= [
+    {% for i in result %}
+        {{i}},
+    {% endfor %}
+    ]</h1>
+</div>
+{% endblock %}

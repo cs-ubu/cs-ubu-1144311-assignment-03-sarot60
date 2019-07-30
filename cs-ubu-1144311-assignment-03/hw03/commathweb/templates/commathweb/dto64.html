@@ -1,0 +1,28 @@
+{% extends 'commathweb/base.html' %}
+{% block content %}
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <h2> แปลงเลขทศนิยมเป็น IEEE floating point double precision (64-bit) </h2>
+    <form method="POST" action="#">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="number">Enter Number</label>
+          <input type="text" name="number" class="form-control" id="number" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form><br>
+    <form action="/">
+        <input type="submit" value="HOME" class="btn btn-success btn-lg" />
+    </form>
+
+    <br>
+    <br>
+    <h1>Result</h1><br>
+    <h3>= {{ result }}</h3><br>
+    <h1>แปลงกลับ</h1><br>
+    <h3>= {{ dec }}</h3>
+
+</div>
+{% endblock %}
